@@ -1,10 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iOS тумблер</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        .ios-toggle {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .ios-toggle-container {
+            position: relative;
+            display: inline-block;
+            width: 51px;
+            height: 31px;
+        }
+        .ios-toggle-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #1a237e;
+            border-radius: 16px;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+        .ios-toggle-handle {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 27px;
+            height: 27px;
+            background-color: #40c4ff;
+            border-radius: 50%;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+        .ios-toggle:checked + .ios-toggle-background {
+            background-color: #40c4ff;
+        }
+        .ios-toggle:checked + .ios-toggle-background .ios-toggle-handle {
+            transform: translateX(20px);
+            background-color: #1a237e;
+        }
+        .demo-container {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .label {
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-
+    <div class="demo-container">
+        <div class="label">iOS тумблер</div>
+        <label class="ios-toggle-container">
+            <input type="checkbox" class="ios-toggle">
+            <span class="ios-toggle-background">
+                <span class="ios-toggle-handle"></span>
+            </span>
+        </label>
+    </div>
 </body>
 </html>
