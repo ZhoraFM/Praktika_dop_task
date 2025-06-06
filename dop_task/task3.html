@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D-куб с 9 секциями на грани</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f0f0f0;
+            perspective: 1000px;
+        }
+
+        .scene {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotate 15s infinite linear;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotateX(0deg) rotateY(0deg); }
+            100% { transform: rotateX(360deg) rotateY(360deg); }
+        }
+
+        .cube {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+
+        .face {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 2px;
+            padding: 2px;
+            box-sizing: border-box;
+            border: 1px solid #333;
+        }
+
+        .face div {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid #555;
+        }
+
+        .front { transform: translateZ(100px); }
+        .back { transform: rotateY(180deg) translateZ(100px); }
+        .right { transform: rotateY(90deg) translateZ(100px); }
+        .left { transform: rotateY(-90deg) translateZ(100px); }
+        .top { transform: rotateX(90deg) translateZ(100px); }
+        .bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+        /* Цвета граней */
+        .front { background: rgba(255, 0, 0, 0.2); }
+        .back { background: rgba(0, 255, 0, 0.2); }
+        .right { background: rgba(0, 0, 255, 0.2); }
+        .left { background: rgba(255, 255, 0, 0.2); }
+        .top { background: rgba(255, 0, 255, 0.2); }
+        .bottom { background: rgba(0, 255, 255, 0.2); }
+    </style>
+</head>
+<body>
+    <div class="scene">
+        <div class="cube">
+            <!-- Передняя грань -->
+            <div class="face front">
+                <div></div><div></div><div></div>
+                <div></div><div></div><div></div>
+                <div></div><div></div><div></div>
+            </div>
+            <!-- Задняя грань -->
+            <div class="face back">
+                <div></div><div></div><div></div>
+                <div></div><div></div><div></div>
+                <div></div><div></div><div></div>
+            </div>
+            <!-- Правая грань -->
+            <div class="face right">
+                <div></div><div></div><div></div>
+                <div></div><div></div><div></div>
+                <div></div><div></div><div></div>
+            </div>
+            <!-- Левая грань -->
+            <div class="face left">
+                <div></div><div></div><div></div>
+                <div></div><div></div><div></div>
+                <div></div><div></div><div></div>
+            </div>
+            <!-- Верхняя грань -->
+            <div class="face top">
+                <div></div><div></div><div></div>
+                <div></div><div></div><div></div>
+                <div></div><div></div><div></div>
+            </div>
+            <!-- Нижняя грань -->
+            <div class="face bottom">
+                <div></div><div></div><div></div>
+                <div></div><div></div><div></div>
+                <div></div><div></div><div></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

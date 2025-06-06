@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        .runner {
+            position: absolute;
+            width: 64px;
+            height: 64px;
+            background-image: url('sprite.png');
+            background-size: 576px 64px;
+            animation: run 1s steps(9) infinite, move 5s linear infinite;
+        }
+        @keyframes run {
+            100% { background-position: -576px; }
+        }
+        @keyframes move {
+            0% { left: -64px; }
+            100% { left: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="runner"></div>
+</body>
+</html>

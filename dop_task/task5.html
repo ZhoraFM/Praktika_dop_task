@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адаптивный блог</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            padding: 0 15px;
+            margin: 0 auto;
+        }
+
+        /* Шапка */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+
+        /* Основной контент и боковая панель */
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .posts-container {
+            flex: 1;
+            padding-right: 15px;
+        }
+
+        .posts {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -10px;
+        }
+
+        .post {
+            width: calc(33.333% - 20px);
+            margin: 0 10px 20px;
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .sidebar {
+            width: 300px;
+            background: #e2e2e2;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        /* Футер */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* Адаптивные стили */
+        @media (max-width: 991px) {
+            .container {
+                max-width: 960px;
+            }
+
+            .post {
+                width: calc(50% - 20px);
+            }
+
+            .sidebar {
+                width: 250px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .container {
+                max-width: 720px;
+            }
+
+            .main-content {
+                flex-direction: column;
+            }
+
+            .posts-container {
+                padding-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .post {
+                width: calc(100% - 20px);
+            }
+
+            .sidebar {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .container {
+                max-width: 540px;
+            }
+
+            .post {
+                width: calc(100% - 20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="container">
+            <h1>Мой блог</h1>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <div class="container">
+        <div class="main-content">
+            <!-- Блок с постами -->
+            <div class="posts-container">
+                <div class="posts">
+                    <!-- Пост 1 -->
+                    <div class="post">
+                        <h3>Заголовок поста 1</h3>
+                        <p>Краткое содержание поста. </p>
+                    </div>
+
+                    <!-- Пост 2 -->
+                    <div class="post">
+                        <h3>Заголовок поста 2</h3>
+                        <p>Краткое содержание поста. </p>
+                    </div>
+
+                    <!-- Пост 3 -->
+                    <div class="post">
+                        <h3>Заголовок поста 3</h3>
+                        <p>Краткое содержание поста. </p>
+                    </div>
+
+                    <!-- Пост 4 -->
+                    <div class="post">
+                        <h3>Заголовок поста 4</h3>
+                        <p>Краткое содержание поста. </p>
+                    </div>
+
+                    <!-- Пост 5 -->
+                    <div class="post">
+                        <h3>Заголовок поста 5</h3>
+                        <p>Краткое содержание поста.</p>
+                    </div>
+
+                    <!-- Пост 6 -->
+                    <div class="post">
+                        <h3>Заголовок поста 6</h3>
+                        <p>Краткое содержание поста. </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Боковая панель -->
+            <aside class="sidebar">
+                <h3>Боковая панель</h3>
+                <p>Здесь может быть информация о блоге, категории, архив и т.д.</p>
+                <ul>
+                    <li>Категория 1</li>
+                    <li>Категория 2</li>
+                    <li>Категория 3</li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Мой блог. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>
